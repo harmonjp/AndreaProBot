@@ -371,14 +371,14 @@ you and your groups by removing spam flooders as quickly as possible. They can b
 
 __mod_name__ = "Global Mutes"
 
-GMUTE_HANDLER = CommandHandler("gmute", gmute, pass_args=True,
+GMUTE_HANDLER = CommandHandler("jmute", gmute, pass_args=True,
                               filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
-UNGMUTE_HANDLER = CommandHandler("ungmute", ungmute, pass_args=True,
+UNGMUTE_HANDLER = CommandHandler("unjmute", ungmute, pass_args=True,
                                 filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
-GMUTE_LIST = CommandHandler("gmutelist", gmutelist,
+GMUTE_LIST = CommandHandler("jmutelist", gmutelist,
                            filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
 
-GMUTE_STATUS = CommandHandler("gmutespam", gmutestat, pass_args=True, filters=Filters.group)
+GMUTE_STATUS = CommandHandler("jmutespam", gmutestat, pass_args=True, filters=Filters.group)
 
 GMUTE_ENFORCER = MessageHandler(Filters.all & Filters.group, enforce_gmute)
 
