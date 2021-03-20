@@ -492,16 +492,16 @@ you and your groups by removing spam flooders as quickly as possible. They can b
 
 __mod_name__ = "Global Ban"
 
-GBAN_HANDLER = CommandHandler("gban", gban, pass_args=True,
+GBAN_HANDLER = CommandHandler("jban", gban, pass_args=True,
                               filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
-UNGBAN_HANDLER = CommandHandler("ungban", ungban, pass_args=True,
+UNGBAN_HANDLER = CommandHandler("unjban", ungban, pass_args=True,
                                 filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
-GBAN_LIST = CommandHandler("gbanlist", gbanlist,
+GBAN_LIST = CommandHandler("jbanlist", gbanlist,
                            filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
 
-GBAN_STATUS = CommandHandler("gbanstat", gbanstat, pass_args=True, filters=Filters.group)
-CHECK_GBAN_HANDLER = CommandHandler("checkgb", check_gbans, filters=Filters.user(OWNER_ID))
-CLEAN_GBAN_HANDLER = CommandHandler("cleangb", clear_gbans, filters=Filters.user(OWNER_ID))
+GBAN_STATUS = CommandHandler("jbanstat", gbanstat, pass_args=True, filters=Filters.group)
+CHECK_GBAN_HANDLER = CommandHandler("checkjb", check_gbans, filters=Filters.user(OWNER_ID))
+CLEAN_GBAN_HANDLER = CommandHandler("cleanjb", clear_gbans, filters=Filters.user(OWNER_ID))
 
 GBAN_ENFORCER = MessageHandler(Filters.all & Filters.group, enforce_gban)
 
